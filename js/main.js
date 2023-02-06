@@ -2,6 +2,8 @@ function contentLoaded() {
 
 const mainContainer = document.querySelector('.page_content');
 
+console.log(mainContainer);
+
 /* MENU DISPLAY FOR MOBILE */
 // Please adjust and check
 let w = document.documentElement.clientWidth || window.innerWidth;
@@ -25,22 +27,6 @@ if( w <= 600 ) {
       }
     })
   }
-  // On other pages, go to menu on 'close page' sign
-  // else 
-  // {
-  //   let close = document.querySelector('.close');
-  //   close.addEventListener('click', function() {
-  //     if(mainNav.classList.contains('active')) {
-  //       console.log("Eyoooo");
-  //       mainNav.classList.remove('active');
-  //     }
-  //     else
-  //     {
-  //       console.log("Whaaaat??");
-  //       mainNav.classList.add('active');
-  //     }
-  //   })
-  // }
 
 }
 
@@ -181,11 +167,16 @@ if( mainContainer.id == 'collabs-section' )
     children.forEach( child => {
       if( child.classList.contains('media-display-container') )
       {
-        childImg = child.children[0];
-        childImg.classList.add('appear');
-    
-        displayContent = child.innerHTML;
-        floatingDisplay.innerHTML = displayContent;
+        if(child.innerHTML != floatingDisplay.innerHTML) {
+
+          childImg = child.children[0];
+          childImg.classList.add('appear');
+      
+          displayContent = child.innerHTML;
+          floatingDisplay.innerHTML = displayContent;
+
+        }
+        
       }
     })
   }

@@ -45,6 +45,9 @@ a:hover {
   font-style: italic;
   transition: all 0.2s ease-in-out;
 }
+.link--download {
+  color: var(--clr-main);
+}
 .main-navigation {
   /* border: 1px solid green; */
   display: flex;
